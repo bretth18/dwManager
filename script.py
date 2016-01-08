@@ -7,6 +7,7 @@ import sys
 import logging
 import spotify
 import threading
+import getpass
 
 #setup logging
 logging.basicConfig(level = logging.DEBUG)
@@ -44,14 +45,14 @@ while not logged_in_event.wait(0.1):
 
 #login to session
 
-userName = raw_input("Gimme dat username")
-passName = raw_input("Gimme dat password")
+userName = raw_input("Gimme dat username: ")
+passName = getpass.getpass("Gimme dat password: ")
 
 session.login(userName, passName)
 
 
 #call input for dwPlaylist
-dwPlaylist = raw_input("input discover weekly playlist URI")
+dwPlaylist = raw_input("input discover weekly playlist URI: ")
 
 #load DW playlist
 len(session.playlist_container)

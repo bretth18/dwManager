@@ -55,9 +55,19 @@ def load_dw_playlist(dwPlaylist):
 
     #load DW playlist
     len(session.playlist_container)
-    playlist = session.playlist_container[0]
-    playlist.load('dwPlaylist')
+    #playlist = session.playlist_container[0]
+    #playlist.load(dwPlaylist)
+    playlist = session.get_playlist(dwPlaylist)
+    container.insert(1, playlist)
 
+
+#store playlist.tracks in an array to copy to new playlist
+
+    if playlist.is_loaded = True:
+        playlist.tracks[0]
+
+def tracks_added(playlist, tracks, index):
+    print('dw tracks added to archive')
 
 def container_loaded(playlist_container):
     print('Playlist container loaded...')

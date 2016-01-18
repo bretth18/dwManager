@@ -67,6 +67,8 @@ def load_dw_playlist(dwPlaylist):
         playlist.tracks[0]
 
 def tracks_added(playlist, tracks, index):
+    container.insert(1, playlist.tracks)
+    
     print('dw tracks added to archive')
 
 def container_loaded(playlist_container):
